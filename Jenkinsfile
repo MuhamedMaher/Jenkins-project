@@ -1,9 +1,9 @@
 pipeline {
     environment {
         dockerproxyImage = ""
-        proxyimagename = "mohamedmaher77/proxy:latest"
+        proxyimagename = "mohamedmaher77/proxy"
         dockerbackendImage = ""
-        backendimagename = "mohamedmaher77/backend:latest"
+        backendimagename = "mohamedmaher77/backend"
         registryCredential = 'Docker'  // Credential ID for Docker Hub login
     }
     agent {
