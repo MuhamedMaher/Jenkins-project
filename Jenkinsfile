@@ -5,11 +5,12 @@ pipeline {
     dockerbackendImage = ""
     backendimagename = "mohamedmaher77/backend:latest"
     registryCredential = 'Docker'  // Credential ID for Docker Hub login
+    DOCKER_CONFIG = "/tmp/.docker"  // Use a directory Jenkins has permission to write to
   }
   agent {
     docker {
       image 'docker:20.10.7-dind' // Use Docker-in-Docker image
-      args '--privileged -v /var/run/docker.sock:/var/run/docker.sock'
+      args '--privileged -v /var/run/docker.sock:/var/run/docker.sock'  // Privileged mode and Docker socket bind
     }
   }
   stages {
